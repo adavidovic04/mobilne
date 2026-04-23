@@ -74,3 +74,60 @@ public boolean onOptionsItemSelected(MenuItem item) {
 
     return true;
 }
+
+
+
+
+    Ne moraš da instaliraš ništa — SQLite je već ugrađen u Android
+
+⸻
+
+🧱 2. Osnovni korak: SQLiteOpenHelper
+
+U Androidu se koristi klasa:
+👉 SQLiteOpenHelper
+
+Ona služi za:
+
+* kreiranje baze
+* update baze
+* pristup podacima
+
+  ovako kreiramo bazu:
+  public class DBHelper extends SQLiteOpenHelper {
+
+    private static final String DB_NAME = "moja_baza.db";
+    private static final int DB_VERSION = 1;
+
+    public DBHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("CREATE TABLE korisnici (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "ime TEXT," +
+                "prezime TEXT)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS korisnici");
+        onCreate(db);
+    }
+}
+
+
+i ovako ubacujemo podatke:
+DBHelper dbHelper = new DBHelper(context);
+SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+ContentValues values = new ContentValues();
+values.put("ime", "Ana");
+values.put("prezime", "Jovic");
+
+db.insert("korisnici", null, values);
+
+
+
