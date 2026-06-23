@@ -1,0 +1,26 @@
+Model za bazu — Post.java i sve sa tacka java
+com.example.kolokvijum2
+│
+├── MainActivity.java
+├── Post.java
+├── PostDao.java
+├── AppDatabase.java
+└── ApiService.java
+
+se nalzi isto gde i mainactivity,znaci tu pravimo sve klase
+a ako radimo u kotlinu onda pravimo kotlin class sa .kt
+
+PostDao.java
+Pravi se kao Interface, ne klasa
+Kad biraš New → Java Class, možeš izabrati Interface.
+
+AppDatabase.java je Obična klasa
+
+ApiService.java je Takođe Interface
+
+
+📄 activity_main.xml = izgled (dugmad, slike, tekst)
+
+💻 MainActivity.java/kt = sav kod i logika
+
+📦 Post, PostDao, AppDatabase, ApiService = posebne klase koje praviš pored MainActivity.
