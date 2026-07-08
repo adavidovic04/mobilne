@@ -1,0 +1,27 @@
+XML koji moraš TI da napraviš: item_subject.xml
+
+Ovaj ti Android Studio neće napraviti.
+
+On služi za jedan element u RecyclerView-u.
+
+Praviš ovako:
+
+Desni klik:
+
+res
+ └── layout
+
+pa:
+
+New
+ → Layout Resource File
+
+Ime:
+
+item_subject
+
+Dobiješ:
+
+res
+ └── layout
+      └── item_subject.xml
